@@ -12,8 +12,39 @@ html {
 
 body {
   height: 100%;
-  background: #000;
+  background: #03001d;
   font-family: "VT323", "Courier New", Courier, monospace;
+}
+
+.clock-container {
+  background: #161616;
+  padding: 10px 25px;
+  outline: 10px grey solid;
+  width: fit-content;
+  border-radius: 10px;
+  margin: 60px auto 20px;
+}
+.clock-container #clock {
+  line-height: 1;
+}
+.clock-container #clock p {
+  color: red;
+  font-size: 100px;
+  display: inline-block;
+}
+.clock-container #clock #amPm {
+  font-size: 16px;
+}
+.clock-container #clock #amPm span {
+  color: grey;
+  opacity: 0.4;
+}
+.clock-container #clock #amPm .active {
+  color: red;
+  opacity: 1;
+}
+.clock-container #clock #displaySeconds {
+  font-size: 50px;
 }
 
 /*# sourceMappingURL=style.css.map */

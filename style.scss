@@ -14,6 +14,56 @@ html {
 
 body {
   height: 100%;
-  background: #000;
-  font-family: "VT323", 'Courier New', Courier, monospace;
+  background: #03001d;
+  font-family: "VT323", "Courier New", Courier, monospace;
+}
+
+.clock-container {
+  background: #161616;
+  padding: 10px 25px;
+  outline: 10px grey solid;
+  width: fit-content;
+  border-radius: 10px;
+  margin: 60px auto 20px;
+  #clock {
+    line-height: 1;
+    p {
+      color: red;
+      font-size: 100px;
+      display: inline-block;
+    }
+
+    #amPm {
+      font-size: 16px;
+
+      span {
+        color: grey;
+        opacity: 0.4;
+      }
+
+      .active {
+        color: red;
+        opacity: 1;
+      }
+
+      #am {
+      }
+
+      #pm {
+      }
+    }
+
+    #displayHours {
+    }
+
+    #colon {
+    }
+
+    #displayMinutes {
+    }
+
+    #displaySeconds {
+      font-size: 50px;
+    }
+  }
 }
