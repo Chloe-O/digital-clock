@@ -1,9 +1,7 @@
-let date = new Date();
-let hours = date.getHours();
-let minutes = date.getMinutes();
-let seconds = date.getSeconds();
+const currentMilliseconds = Date.now();
+const date = new Date(currentMilliseconds);
 
-console.log(date);
-console.log(hours);
-console.log(minutes);
-console.log(seconds);
+const hours = date.getHours() ;
+const minutes = date.getMinutes();
+const seconds = date.getSeconds();
+
