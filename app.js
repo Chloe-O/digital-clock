@@ -1,16 +1,10 @@
-/*
-TO DO
-
-- convert hr to 12 hr clock and show am/pm
-- add small date above the time e.g. jan, feb, mar, apr, etc.
-
-
-*/
-
 const displayHours = document.getElementById("displayHours");
 const displayMinutes = document.getElementById("displayMinutes");
 const displaySeconds = document.getElementById("displaySeconds");
 const colon = document.getElementById("colon");
+
+const displayAM = document.getElementById("am");
+const displayPM = document.getElementById("pm");
 
 let hours;
 let minutes;
@@ -24,16 +18,22 @@ function checkNumLength(num) {
   }
 }
 
+function checkAmPm(currentHr) {
+  if (currentHr < 12) {
+    displayAM.classList.add("active");
+    displayPM.classList.remove("active");
+  } else {
+    displayPM.classList.add("active");
+    displayAM.classList.remove("active");
+  }
+}
+
 function displayTime() {
   getCurrentTime();
   displayHours.innerText = checkNumLength(hours);
   displayMinutes.innerText = checkNumLength(minutes);
   displaySeconds.innerText = checkNumLength(seconds);
 }
-
-// displayTime();
-
-// setInterval(displayTime, 1000);
 
 function getCurrentTime() {
   const currentMilliseconds = Date.now();
@@ -42,6 +42,8 @@ function getCurrentTime() {
   hours = date.getHours().toString();
   minutes = date.getMinutes().toString();
   seconds = date.getSeconds().toString();
+
+  checkAmPm(hours);
 }
 
-// setInterval( getCurrentTime, 1000 );
+setInterval(displayTime, 1000);
